@@ -1,0 +1,14 @@
+-razor pay //refer to video on twitter
+-gallery section comment out [done]
+-youtube live // refer to spark's website
+    -play button on landing page
+    -iframe after speakers section
+-particles.js on lading page  //ashok
+-fix landing page  [done]
+-add separate team page on navbar, multiple page webiste style, add navbar too [done]
+- media query for logo //ashok [done]
+- update steve's logo on main website [done]
+
+Font on header(diff for TEDx and BU)
+Font of H2 tags and everywhere where tedx is mentioned changed to helvetica
+second about image left margin/padding to be increased, too close to text
