@@ -1,0 +1,25 @@
+{
+  "name": "tedxbu",
+  "version": "1.0.0",
+  "description": "Official website for TedxBennettUniversity",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TEDxBennettUniversity/TEDxBU.git"
+  },
+  "author": "Rishabh Pathak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TEDxBennettUniversity/TEDxBU/issues"
+  },
+  "homepage": "https://github.com/TEDxBennettUniversity/TEDxBU#readme",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "joi": "^17.4.0",
+    "mongoose": "^5.11.15"
+  }
+}
