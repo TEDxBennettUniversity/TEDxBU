@@ -15,7 +15,7 @@ const renderForm = (req, res) => {
 const registerUser = async (req, res) => {
     const detail = new Detail(req.body.details);
     await detail.save();
-    res.redirect('thankyou');
+    res.redirect('/');
 }
 
 module.exports = { renderIndex, renderTeam, renderForm, registerUser };
