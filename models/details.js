@@ -12,6 +12,14 @@ const DetailsSchema = new mongoose.Schema({
     phone: {
         type: String,
         required: true
+    },
+    institution: {
+        type: String,
+        required: true
+    },
+    awareness: {
+        type: String,
+        required: true
     }
 });
 
