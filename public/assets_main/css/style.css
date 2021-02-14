@@ -1585,6 +1585,7 @@ p {
   background: linear-gradient(150deg, black 30%, #e62b1e 100%);
 }
 .single-pricing {
+  background-color: white;
   border: 3px solid rgba(255, 255, 255, 0.5);
   border-radius: 15px;
   padding: 50px 30px;

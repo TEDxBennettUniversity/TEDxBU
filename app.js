@@ -11,7 +11,9 @@ mongoose.connect(dbUrl, {
     useCreateIndex: true,
     useUnifiedTopology: true,
     useFindAndModify: false
-});
+}).catch(
+    console.log('Database connection error')
+);
 
 const db = mongoose.connection;
 
