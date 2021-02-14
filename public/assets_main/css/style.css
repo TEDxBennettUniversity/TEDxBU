@@ -1,4 +1,8 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800");
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800|Space+Mono:400,700&display=swap");
+@font-face{
+  src: url(/assets_main/fonts/Helvetica.ttf);
+  font-family: Helvetica;
+}
 html {
   scroll-behavior: auto;
 }
@@ -8,13 +12,15 @@ html {
 }
 body {
   font-family: "Poppins", sans-serif;
+  /* font-family: Helvetica; */
   font-weight: normal;
   font-style: normal;
   color: white;
   /* background-color: #222629; */
   background-color: white;
   overflow-x: hidden;
-  cursor: url(/public/cursor.png), auto !important;
+  /* cursor: url(../../cursor.png), auto !important; */
+  cursor: url(../../finalcursor.png), auto !important;
 }
 
 * {
@@ -24,8 +30,9 @@ body {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-a:hover{
-  cursor: url(/public/finalcursor.png), auto !important;
+a:hover {
+  /* cursor: url(../../finalcursor.png), auto !important; */
+  cursor: url(../../cursor.png), auto !important;
 }
 
 img {
@@ -95,6 +102,7 @@ ol {
 }
 
 p {
+  /* font-family: "Space Mono", sans-serif; */
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -645,7 +653,7 @@ p {
   }
 }
 
-  /* .navbar-area .navbar .navbar-collapse .dropdown-menu{
+/* .navbar-area .navbar .navbar-collapse .dropdown-menu{
     position: absolute;
     top: 112%;
     left: 0;
@@ -653,7 +661,6 @@ p {
     background-color: #e62b1e;
     z-index: 8;
   } */
-
 
 .navbar-area .navbar .navbar-nav .nav-item {
   margin: 0 16px;
@@ -768,7 +775,7 @@ p {
 }
 @media (max-width: 767px) {
   .header-content-area {
-    height: 650px;
+    height: 690px;
   }
 }
 @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -867,7 +874,7 @@ p {
 .header-content .header-title {
   font-size: 75px;
   color: #fff;
-  margin-top:100px;
+  margin-top: 100px;
   /* text-transform: uppercase; */
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
@@ -911,7 +918,7 @@ p {
 
 .about-image img {
   width: 100%;
-  padding-right: 100px; 
+  padding-right: 100px;
 }
 
 .about-content .date {
@@ -936,12 +943,11 @@ p {
   left: 0;
 }
 
-
 /*===========================
        4.COUNTER css 
 ===========================*/
 .counter-area {
-  background-image: url(/public/assets_main/images/bg.jpg);
+  background-image: url(/assets_main/images/bg.jpg);
   background-repeat: repeat;
 }
 
@@ -1587,6 +1593,7 @@ p {
 .single-pricing {
   background-color: white;
   border: 3px solid rgba(255, 255, 255, 0.5);
+  background-color: white;
   border-radius: 15px;
   padding: 50px 30px;
   -webkit-transition: all 0.3s ease-out 0s;
@@ -1605,7 +1612,7 @@ p {
   margin-top: 10px;
 }
 .single-pricing .pricing-price {
-  background-image: url(/public/assets_main/images/pricing-bg.jpg);
+  background-image: url(/assets_main/images/pricing-bg.jpg);
   background-position: center center;
   background-size: cover;
   position: relative;
@@ -1622,7 +1629,7 @@ p {
   height: 100%;
   top: 0;
   left: 0;
-  background-color: rgba(230, 43, 30, 0.85);
+  background-color: rgba(230, 43, 30, 0.71);
   z-index: -1;
 }
 .single-pricing .pricing-price span {
@@ -1808,7 +1815,7 @@ p {
   background: linear-gradient(
     180deg,
     black 10%,
-    rgb(189, 186, 186),
+    rgb(155, 154, 154),
     black 100%
   );
 }

@@ -2,11 +2,16 @@
     01. Common CSS
 ===========================*/
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700|Space+Mono:400,700&display=swap");
+@font-face{
+  src: url(/assets_teams/fonts/Helvetica.ttf);
+  font-family: Helvetica;
+}
 body {
   font-weight: normal;
   font-style: normal;
   overflow-x: hidden;
-  cursor:url(/public/cursor.png), auto !important;
+  /* cursor:url(/cursor.png), auto !important; */
+  cursor: url(/finalcursor.png), auto !important;
 }
 
 * {
@@ -16,7 +21,8 @@ body {
   box-sizing: border-box;
 }
 a:hover{
-  cursor: url(/public/finalcursor.png), auto !important;
+  /* cursor: url(/public/finalcursor.png), auto !important; */
+  cursor:url(/cursor.png), auto !important;
 }
 
 a:focus,

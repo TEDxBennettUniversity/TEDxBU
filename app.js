@@ -6,6 +6,13 @@ const indexRoutes = require('./routes/index');
 
 const dbUrl = process.env.DB_URL || 'mongodb://192.168.0.36:27017/tedx';
 
+// mongoose.connect(dbUrl, {
+//     useNewUrlParser: true,
+//     useCreateIndex: true,
+//     useUnifiedTopology: true,
+//     useFindAndModify: false
+// });
+
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
     useCreateIndex: true,
