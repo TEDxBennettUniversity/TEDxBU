@@ -20,6 +20,11 @@ const DetailsSchema = new mongoose.Schema({
     awareness: {
         type: String,
         required: true
+    },
+    tier: {
+        type: String,
+        required: true,
+        enum: ['Basic Pass', 'Early Bird', 'Premium Pass']
     }
 });
 

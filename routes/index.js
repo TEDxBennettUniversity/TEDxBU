@@ -14,4 +14,7 @@ router.route('/register')
     .get(indexDetail.renderForm)
     .post(validateDetails, catchAsync(indexDetail.registerUser));
 
+router.route('/payment')
+    .get(indexDetail.renderPayment);
+
 module.exports = router;

@@ -29,8 +29,8 @@ const detailSchema = Joi.object({
         email: Joi.string().email({ tlds: { allow: false } }).required().escapeHTML(),
         phone: Joi.string().length(10).pattern(/^[0-9]+$/).required().escapeHTML(),
         institution: Joi.string().required().escapeHTML(),
-        awareness: Joi.string().required().escapeHTML()
-    }).required()
+        awareness: Joi.string().required().escapeHTML(),
+    }).required(),
 });
 
 module.exports = { detailSchema };
