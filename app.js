@@ -14,7 +14,7 @@ mongoose.connect(dbUrl, {
     useFindAndModify: false
 }).catch((err) => {
     console.log('Database connection error');
-    console.log(err);
+    // console.log(err);
 });
 
 const db = mongoose.connection;
