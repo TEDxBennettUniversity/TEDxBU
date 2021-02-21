@@ -1024,35 +1024,35 @@
                 </div>
                 <div class="col-lg-8">
                     <div class="contact-form pt-20">
-                        <form id="contact-form" action="assets/contact.php" method="post">
+                        <form id="contact-form" action="/contact" method="POST">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="single-form">
-                                        <input type="text" name="name" placeholder="Your Name">
+                                        <input type="text" name="contact[name]" placeholder="Your Name">
                                         <i class="lni-user"></i>
                                     </div> <!-- single form -->
                                 </div>
                                 <div class="col-md-6">
                                     <div class="single-form">
-                                        <input type="email" name="email" placeholder="Your Email">
+                                        <input type="email" name="contact[email]" placeholder="Your Email">
                                         <i class="lni-envelope"></i>
                                     </div> <!-- single form -->
                                 </div>
                                 <div class="col-md-6">
                                     <div class="single-form">
-                                        <input type="text" name="subject" placeholder="Your Subject">
+                                        <input type="text" name="contact[subject]" placeholder="Your Subject">
                                         <i class="lni-pencil-alt"></i>
                                     </div> <!-- single form -->
                                 </div>
                                 <div class="col-md-6">
                                     <div class="single-form">
-                                        <input type="text" name="number" placeholder="Phone Number">
+                                        <input type="text" name="contact[number]" placeholder="Phone Number">
                                         <i class="lni-phone-handset"></i>
                                     </div> <!-- single form -->
                                 </div>
                                 <div class="col-md-12">
                                     <div class="single-form">
-                                        <textarea name="message" placeholder="Your Message"></textarea>
+                                        <textarea name="contact[message]" placeholder="Your Message"></textarea>
                                         <i class="lni-comment-alt"></i>
                                     </div> <!-- single form -->
                                 </div>
@@ -1095,8 +1095,8 @@
                             <h2 class="subscribe-title">Subscribe Now</h2>
                             <h4>Don't miss a thing! Receive regular updates about our event</h4>
                             <div class="subscribe-form mt-45">
-                                <form action="#">
-                                    <input type="email" placeholder="Enter Your Email">
+                                <form action="/subscribe" method="POST">
+                                    <input type="email" placeholder="Enter Your Email" name="email" required>
                                     <button class="main-btn">Subscribe Now</button>
                                 </form>
                             </div>
@@ -1219,9 +1219,6 @@
     <script src="assets_main/js/app.js"></script>
     <!--====== wow js ======-->
     <script src="assets_main/js/wow.min.js"></script>
-
-    <!--====== Ajax Contact js ======-->
-    <script src="assets_main/js/ajax-contact.js"></script>
 
     <!--====== Main js ======-->
     <script src="assets_main/js/main.js"></script>

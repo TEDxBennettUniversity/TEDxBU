@@ -1,5 +1,8 @@
 const Detail = require('../models/details');
+const Subscription = require('../models/subscription');
+const Contact = require('../models/contacts');
 const ExpressError = require('../utils/ExpressError');
+const mailer = require('../utils/mailer');
 
 const validateTier = (tier) => {
     if (!tier) {
@@ -43,4 +46,33 @@ const renderPayment = (req, res) => {
     res.render('samplepayment', { heading });
 }
 
-module.exports = { renderIndex, renderTeam, renderForm, registerUser, renderPayment };
+const userSubscribe = async (req, res) => {
+    const subEmail = new Subscription(req.body);
+    await subEmail.save();
+    res.redirect('/');
+}
+
+const contactTeam = async (req, res) => {
+    const contact = new Contact(req.body.contact);
+    await contact.save();
+
+    const mailBody = req.body.contact;
+    const mailOptions = {
+        from: process.env.CONTACT_MAIL_ID,
+        to: 'tedxbennettuniversity@gmail.com',
+        subject: `TedxBennett: ${mailBody.subject}`,
+        html: `<p>Name: ${mailBody.name}</p><p>Email: ${mailBody.email}</p><p>Phone: ${mailBody.number}</p><p>Message: ${mailBody.message}</p>`
+    };
+
+    mailer.sendMail(mailOptions, (err, info) => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log('Email sent:' + info.response);
+        }
+    });
+
+    res.redirect('/');
+}
+
+module.exports = { renderIndex, renderTeam, renderForm, registerUser, renderPayment, userSubscribe, contactTeam };

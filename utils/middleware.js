@@ -1,14 +1,26 @@
 const ExpressError = require('./ExpressError');
-const { detailSchema } = require('./schemas');
+const { detailSchema, subscriptionSchema, contactSchema } = require('./schemas');
 
-const validateDetails = (req, res, next) => {
-    const { error } = detailSchema.validate(req.body);
+const validate = (req, res, next, schema) => {
+    const { error } = schema.validate(req.body);
     if (error) {
         const msg = error.details.map(el => el.message).join(', ');
         throw new ExpressError(msg, 400);
     } else {
         next();
     }
+}
+
+const validateDetails = (req, res, next) => {
+    validate(req, res, next, detailSchema);
 };
 
-module.exports = { validateDetails };
+const validateSubscription = (req, res, next) => {
+    validate(req, res, next, subscriptionSchema);
+};
+
+const validateContact = (req, res, next) => {
+    validate(req, res, next, contactSchema);
+};
+
+module.exports = { validateDetails, validateSubscription, validateContact };
