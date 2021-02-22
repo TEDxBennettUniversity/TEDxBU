@@ -21,14 +21,13 @@ router.route('/register')
     .get(indexDetail.renderForm)
     .post(validation.validateDetails, catchAsync(indexDetail.registerUser));
 
-// broken
 router.route('/payment')
     .get(indexDetail.renderPayment);
 
 router.route('/order')
     .get(paymentFuncs.getOrder);
 
-router.route('/capture/:paymentId')
+router.route('/capture')
     .post(paymentFuncs.capturePayment);
 
 module.exports = router;

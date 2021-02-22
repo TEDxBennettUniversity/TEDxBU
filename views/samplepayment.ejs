@@ -12,43 +12,28 @@
 </head>
 <body>
     <h1><%= heading %></h1>
-    <button onclick="paymentHandler(event);">Pay</button>
-
+    <button id="rzp-button1">Pay</button>
     <script>
-        const paymentHandler = async (e) => {
-            console.log('Button clicked');
-            const API_URL = '<%- process.env.PAYMENT_API_URL %>';
-            console.log(API_URL);
-            e.preventDefault();
-
-            const response = await axios.get(`${API_URL}order`);
-            const { data } = response;
-
-            console.log(data);
-
-            const options = {
-                key: '<%- process.env.RAZOR_PAY_KEY_ID %>',
-                name: 'TedxBennettUniversity',
-                description: 'Payment Gateway',
-                order_id: data.id,
-                handler: async (response) => {
-                    try {
-                        const paymentId = response.razor_payment_id;
-                        const url = `${API_URL}capture/${paymentId}`;
-                        const captureResponse = await axios.post(url, {});
-                        console.log(captureResponse.data);
-                    } catch (err) {
-                        console.log(err);
-                    }
-                },
-                theme: {
-                    color: "#686CFD",
-                },
+        document.getElementById('rzp-button1').onclick = async function(e){   
+            const order = await axios.get('http://localhost:3000/order');
+            console.log(order);
+            console.log(order.data.id);
+            var options = {
+                "key": '<%- process.env.RAZOR_PAY_KEY_ID %>',
+                "amount": "1000",
+                "currency": "INR",    
+                "name": "Acme Corp",    
+                "description": "Test Transaction",      
+                "order_id": order.data.id,
+                "callback_url": "http://localhost:3000/capture",
+                "theme": {        
+                    "color": "#3399cc"    
+                }
             };
-
-            const rzpl = new window.Razorpay(options);
-            rzpl.open();
-        };
+            var rzp1 = new Razorpay(options); 
+                rzp1.open();    
+                e.preventDefault();
+        }
     </script>
 </body>
 </html>
