@@ -8,4 +8,12 @@ const transporter = nodemailer.createTransport({
     }
 });
 
-module.exports = transporter;
+const transporter2 = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: process.env.TEDX_MAIL_ID,
+        pass: process.env.TEDX_MAIL_PASS
+    }
+})
+
+module.exports = { transporter, transporter2 };

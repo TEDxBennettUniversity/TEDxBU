@@ -2,7 +2,7 @@ const Detail = require('../models/details');
 const Subscription = require('../models/subscription');
 const Contact = require('../models/contacts');
 const ExpressError = require('../utils/ExpressError');
-const mailer = require('../utils/mailer');
+const { transporter, transporter2 } = require('../utils/mailer');
 
 const validateTier = (tier) => {
     if (!tier) {
@@ -49,6 +49,23 @@ const renderPayment = (req, res) => {
 const userSubscribe = async (req, res) => {
     const subEmail = new Subscription(req.body);
     await subEmail.save();
+
+    const { email } = req.body;
+    const mailOptions = {
+        from: process.env.TEDX_MAIL_ID,
+        to: email,
+        subject: 'TEDx Bennett University Purchase Confirmation',
+        html: `<p>Dear Mr/Miss</p><p>Thank you for subscribing to our mailing list.</p><p>Behind every success story there is a lifetime worth of struggle that never meets the public eye. Most people in the society look at people that are thriving in their fields and say ‘they got lucky’ or ‘it was handed to them’, but nobody looks for the struggle they had to encounter. Through TEDx Bennett University, we hope to bring to light some of these background stories.</p><p>Stay tuned to our website for more information and latest updates.</p><h1><span style="color: #e62b1e;">TED<sup>x</sup></span>BennettUniversity</h1>`
+    };
+
+    transporter2.sendMail(mailOptions, (err, info) => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log('Email sent:' + info.response);
+        }
+    });
+
     res.redirect('/');
 }
 
@@ -59,12 +76,12 @@ const contactTeam = async (req, res) => {
     const mailBody = req.body.contact;
     const mailOptions = {
         from: process.env.CONTACT_MAIL_ID,
-        to: 'tedxbennettuniversity@gmail.com',
+        to: process.env.TEDX_MAIL_ID,
         subject: `TedxBennett: ${mailBody.subject}`,
         html: `<p>Name: ${mailBody.name}</p><p>Email: ${mailBody.email}</p><p>Phone: ${mailBody.number}</p><p>Message: ${mailBody.message}</p>`
     };
 
-    mailer.sendMail(mailOptions, (err, info) => {
+    transporter.sendMail(mailOptions, (err, info) => {
         if (err) {
             console.log(err);
         } else {

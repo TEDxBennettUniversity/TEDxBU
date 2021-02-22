@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const catchAsync = require('../utils/catchAsync');
 const indexDetail = require('../controllers/index');
+const paymentFuncs = require('../controllers/payment');
 const validation = require('../utils/middleware');
 
 router.route('/')
@@ -20,7 +21,14 @@ router.route('/register')
     .get(indexDetail.renderForm)
     .post(validation.validateDetails, catchAsync(indexDetail.registerUser));
 
+// broken
 router.route('/payment')
     .get(indexDetail.renderPayment);
+
+router.route('/order')
+    .get(paymentFuncs.getOrder);
+
+router.route('/capture/:paymentId')
+    .post(paymentFuncs.capturePayment);
 
 module.exports = router;
