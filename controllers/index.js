@@ -11,7 +11,7 @@ const validateTier = (tier) => {
     let heading = '';
     if (tier === 'basic_pass') heading = 'Basic Pass';
     else if (tier === 'early_bird') heading = 'Early Bird';
-    else if (tier === 'premium_pass') heading = 'Premium Pass';
+    // else if (tier === 'premium_pass') heading = 'Premium Pass';
     else {
         throw new ExpressError('Invalid Tier', 400);
     }
@@ -48,12 +48,12 @@ const renderPayment = (req, res) => {
     const heading = validateTier(tier);
     let cost = 0
     switch (heading) {
-        case 'Basic Pass': cost = 150 * 100;
+        case 'Basic Pass': cost = 250 * 100;
             break;
         case 'Early Bird': cost = 100 * 100;
             break;
-        case 'Premium Pass': cost = 200 * 100;
-            break;
+        // case 'Premium Pass': cost = 200 * 100;
+        //     break;
         default:
             throw new ExpressError('Something went wrong');
     };
@@ -88,7 +88,7 @@ const userSubscribe = async (req, res) => {
         }
     });
 
-    res.redirect('/');
+    res.render('thankyou', { msg1: 'You have been added to our mailing list', msg2: '' });
 }
 
 const contactTeam = async (req, res) => {
@@ -111,7 +111,7 @@ const contactTeam = async (req, res) => {
         }
     });
 
-    res.redirect('/');
+    res.render('thankyou', { msg1: 'Glad that you reached out to us!', msg2: "We'll get back to you soon." });
 }
 
 module.exports = { renderIndex, renderTeam, renderForm, registerUser, renderPayment, userSubscribe, contactTeam };

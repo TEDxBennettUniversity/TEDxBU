@@ -3,11 +3,12 @@ const mongoose = require('mongoose');
 const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
 const session = require('express-session');
+const MongoDBStore = require('connect-mongo').default;
 const path = require('path');
 const ExpressError = require('./utils/ExpressError');
 const indexRoutes = require('./routes/index');
 
-const dbUrl = process.env.DB_URL || 'mongodb://192.168.0.36:27017/tedx';
+const dbUrl = process.env.DB_URL;
 
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
@@ -16,11 +17,9 @@ mongoose.connect(dbUrl, {
     useFindAndModify: false
 }).catch((err) => {
     console.log('Database connection error');
-    // console.log(err);
 });
 
 const db = mongoose.connection;
-
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -35,6 +34,9 @@ app.use(helmet({
     contentSecurityPolicy: false
 }));
 app.use(session({
+    store: MongoDBStore.create({
+        mongoUrl: dbUrl,
+    }),
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,

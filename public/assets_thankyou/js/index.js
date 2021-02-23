@@ -192,12 +192,12 @@
             t
         }()) || r) || r)
           , P = new u.a("Thank You!",{
-            color: "#0f070a",
+            color: "#fff",
             size: b.a.isMobile ? .5 : .8
         });
         P.position.x -= .5 * P.basePosition,
         g.add(P);
-        var _ = ["#4062BB", "#52489C", "#59C3C3", "#F45B69", "#F45B69"].map(function(e) {
+        var _ = ["#e6757f", "#e62b1e", "#e62b1e", "#F45B69", "#b82218"].map(function(e) {
             return new i.Color(e)
         })
           , S = new (function(e) {
