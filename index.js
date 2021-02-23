@@ -1,6 +1,4 @@
-if (process.env.NODE_ENV !== "production") {
-    require('dotenv').config();
-}
+require('dotenv').config();
 const { app, db } = require('./app');
 
 db.on('error', console.error.bind(console, 'connection error'));

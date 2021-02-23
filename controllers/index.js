@@ -65,7 +65,7 @@ const renderPayment = (req, res) => {
         email: req.session.email,
         phone: req.session.phone
     };
-    res.render('samplepayment', variables);
+    res.render('payment', variables);
 }
 
 const userSubscribe = async (req, res) => {
