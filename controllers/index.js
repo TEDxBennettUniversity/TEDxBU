@@ -48,15 +48,16 @@ const renderPayment = (req, res) => {
     const heading = validateTier(tier);
     let cost = 0
     switch (heading) {
-        case 'Basic Pass': cost = 150;
+        case 'Basic Pass': cost = 150 * 100;
             break;
-        case 'Early Bird': cost = 100;
+        case 'Early Bird': cost = 100 * 100;
             break;
-        case 'Premium Pass': cost = 200;
+        case 'Premium Pass': cost = 200 * 100;
             break;
         default:
             throw new ExpressError('Something went wrong');
     };
+    req.session.cost = cost;
     const variables = {
         heading,
         cost,

@@ -8,7 +8,7 @@ const instance = new Razorpay({
 
 const getOrder = (req, res) => {
     var options = {  
-        amount: 50000,
+        amount: req.session.cost,
         currency: "INR", 
     };
     
@@ -20,6 +20,7 @@ const getOrder = (req, res) => {
 
 const capturePayment = (req, res) => {
     // console.log(req);
+    res.render('thankyou');
     res.send(req.body.razorpay_payment_id);
 }
 
