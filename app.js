@@ -1,6 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const helmet = require('helmet');
+const mongoSanitize = require('express-mongo-sanitize');
+const session = require('express-session');
 const path = require('path');
 const ExpressError = require('./utils/ExpressError');
 const indexRoutes = require('./routes/index');
@@ -26,10 +28,20 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(mongoSanitize({
+    replaceWith: '_'
+}));
 app.use(helmet({
     contentSecurityPolicy: false
 }));
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        httpOnly: true,
+    }
+}))
 
 app.use('/', indexRoutes);
 

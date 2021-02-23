@@ -34,6 +34,9 @@ const renderForm = (req, res) => {
 
 const registerUser = async (req, res) => {
     const detail = new Detail(req.body.details);
+    req.session.name = detail.name;
+    req.session.email = detail.email;
+    req.session.phone = detail.phone;
     const { tier } = req.query;
     detail.tier = validateTier(tier);
     await detail.save();
@@ -43,7 +46,25 @@ const registerUser = async (req, res) => {
 const renderPayment = (req, res) => {
     const { tier } = req.query;
     const heading = validateTier(tier);
-    res.render('samplepayment', { heading });
+    let cost = 0
+    switch (heading) {
+        case 'Basic Pass': cost = 150;
+            break;
+        case 'Early Bird': cost = 100;
+            break;
+        case 'Premium Pass': cost = 200;
+            break;
+        default:
+            throw new ExpressError('Something went wrong');
+    };
+    const variables = {
+        heading,
+        cost,
+        name: req.session.name,
+        email: req.session.email,
+        phone: req.session.phone
+    };
+    res.render('samplepayment', variables);
 }
 
 const userSubscribe = async (req, res) => {

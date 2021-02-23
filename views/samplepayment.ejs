@@ -20,12 +20,17 @@
             console.log(order.data.id);
             var options = {
                 "key": '<%- process.env.RAZOR_PAY_KEY_ID %>',
-                "amount": "1000",
+                "amount": "<%= cost %>",
                 "currency": "INR",    
-                "name": "Acme Corp",    
-                "description": "Test Transaction",      
+                "name": "Tedx Bennett University",    
+                "description": "<%= heading %> purchase",      
                 "order_id": order.data.id,
                 "callback_url": "http://localhost:3000/capture",
+                "prefill": {
+                    "name": "<%= name %>",
+                    "email": "<%= email %>",
+                    "contact": "<%= phone %>"
+                },
                 "theme": {        
                     "color": "#3399cc"    
                 }
