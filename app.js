@@ -33,9 +33,15 @@ app.use(mongoSanitize({
 app.use(helmet({
     contentSecurityPolicy: false
 }));
+
+app.use('/healthCheck', (req, res) => {
+    res.sendStatus(200);
+});
+
 app.use(session({
     store: MongoDBStore.create({
         mongoUrl: dbUrl,
+        ttl: 15 * 60
     }),
     secret: process.env.SESSION_SECRET,
     resave: false,
@@ -43,9 +49,12 @@ app.use(session({
     cookie: {
         httpOnly: true,
     }
-}))
+}));
 
 app.use('/', indexRoutes);
+app.use('/healthCheck', (req, res) => {
+    res.sendStatus(200);
+});
 
 app.all('*', (req, res, next) => {
     next(new ExpressError(`Page Not Found ${req.url}`, 404));
