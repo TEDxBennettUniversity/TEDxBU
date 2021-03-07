@@ -7,8 +7,8 @@ const DetailsSchema = new mongoose.Schema({
     },
     email: {
         type: String,
-        required: true
-        // unique: true
+        required: true,
+        unique: true
     },
     phone: {
         type: String,
@@ -26,6 +26,18 @@ const DetailsSchema = new mongoose.Schema({
         type: String,
         required: true,
         enum: ['Basic Pass', 'Early Bird', 'Premium Pass']
+    },
+    paid: {
+        type: Boolean,
+        default: false
+    },
+    paymentID: {
+        type: String,
+        default: 'NULL'
+    },
+    orderID: {
+        type: String,
+        default: 'NULL'
     }
 });
 
