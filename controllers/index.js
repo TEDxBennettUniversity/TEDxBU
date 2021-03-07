@@ -1,6 +1,7 @@
 const Detail = require('../models/details');
 const Subscription = require('../models/subscription');
 const Contact = require('../models/contacts');
+const Address = require('../models/addresses');
 const ExpressError = require('../utils/ExpressError');
 const { transporter, transporter2 } = require('../utils/mailer');
 
@@ -18,7 +19,12 @@ const validateTier = (tier) => {
     return heading;
 }
 
-const renderIndex = (req, res) => {
+const renderIndex = async (req, res) => {
+    const ip = req.ip;
+    const d = new Date();
+    const date = d.toLocaleString('en-GB', { timeZone: 'Asia/Kolkata' })
+    const address = new Address({ ip, date });
+    await address.save();
     res.render('index');
 }
 

@@ -52,9 +52,6 @@ app.use(session({
 }));
 
 app.use('/', indexRoutes);
-app.use('/healthCheck', (req, res) => {
-    res.sendStatus(200);
-});
 
 app.all('*', (req, res, next) => {
     next(new ExpressError(`Page Not Found ${req.url}`, 404));
