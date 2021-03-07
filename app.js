@@ -41,13 +41,13 @@ app.use('/healthCheck', (req, res) => {
 app.use(session({
     store: MongoDBStore.create({
         mongoUrl: dbUrl,
-        ttl: 15 * 60
     }),
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
     cookie: {
         httpOnly: true,
+        maxAge: 6 * 60 * 60 * 1000
     }
 }));
 
