@@ -540,10 +540,10 @@ p {
 /*===========================
     2.HEADER css 
 ===========================*/
-.header-area {
+/* .header-area { */
   /* padding-left: 15px;
   padding-right: 15px; */
-}
+/* } */
 @media (max-width: 767px) {
   .header-area {
     padding: 0;
@@ -1487,7 +1487,7 @@ p {
   }
 }
 .single-team .team-content .sub-title {
-  font-size: 16px;
+  font-size: 10.8px;
   color: #e62b1e;
   -webkit-transition: all 0.3s ease-out 0s;
   -moz-transition: all 0.3s ease-out 0s;
