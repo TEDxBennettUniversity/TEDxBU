@@ -5,7 +5,7 @@
 
 <div align="center">
  
-<a href="https://tedxbennettuniversity.com/"><img src="https://drive.google.com/file/d/1CuwFLQ8hT2tXDMR4S6676xlCbDnbjowu/view?usp=sharing" width=200; margin=auto auto/></a>
+<a href="https://tedxbennettuniversity.com/"><img src="https://tedxbennettuniversity.com/assets_teams/img/Transparent.png" width=200; margin=auto auto/></a>
 
  # TEDxBennettUniversity
  
