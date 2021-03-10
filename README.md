@@ -29,7 +29,7 @@ Help us in creating a legacy!
 
 ## Contributions
 
- We're are open to `enhancements` & `bug-fixes` :smile: 
+ We're are open to `suggestions`, `enhancements` & `bug-fixes` :smile: 
 
 -----------------------------------------------
 
