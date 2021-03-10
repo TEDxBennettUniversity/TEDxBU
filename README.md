@@ -9,8 +9,9 @@
 
  # TEDxBennettUniversity
  
-[![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://tedxbennettuniversity.com/)
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://tedxbennettuniversity.com/)
+<!-- [![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://tedxbennettuniversity.com/)
+[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://tedxbennettuniversity.com/) -->
+[![forthebadge](https://forthebadge.com/images/badges/built-with-swag.svg)](https://tedxbennettuniversity.com/)
 
  
 </div> 
