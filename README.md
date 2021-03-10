@@ -17,7 +17,7 @@
 
 
 --------
-TEDxBennettUniversity 2021, the very first TEDx event of Bennett by [Team](https://tedxbennettuniversity.com/team) students of Bennett University to host a TEDx event that will bring diversified and creatives minds from all across the country under one roof to share their experiences, innovate, ideate, inspire one another and the community with their skills and guide the attendees to help them lead an impactful life. TEDxBennettUniversity 2021's theme INCOGNITO, UNheard | UNseen | UNrevealed aims to 
+TEDxBennettUniversity 2021, the very first TEDx event of Bennett by [Team](https://tedxbennettuniversity.com/team) students of Bennett University to host a TEDx event that will bring diversified and creatives minds from all across the country under one roof to share their experiences, innovate, ideate, inspire one another and the community with their skills and guide the attendees to help them lead an impactful life. TEDxBennettUniversity 2021's theme is INCOGNITO, UNheard | UNseen | UNrevealed. 
 
 Help us in creating a legacy!
 
