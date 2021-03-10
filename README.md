@@ -1,11 +1,11 @@
 # TEDxBennettUniversity 1.0
-🕸️ The website for [TEDxBU](https://tedxbennettuniversity.com/) 2021.
+🕸️ The website for [TEDxBennettUniversity](https://tedxbennettuniversity.com/) 2021.
 
 
 
 <div align="center">
  
-<a href="https://tedxbennettuniversity.com/"><img src="assets_teams/img/Transparent.png" width=100; margin=auto auto/></a>
+<a href="https://tedxbennettuniversity.com/"><img src="/assets_teams/img/Transparent.png" width=100; margin=auto auto/></a>
 
  # TEDxBennettUniversity
  
