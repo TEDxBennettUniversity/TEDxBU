@@ -43,7 +43,7 @@ Help us in creating a legacy!
 
 ## Roles
 
-- [Anmol Arora - Front End Designer and Developer](https://github.com/ANMOLCODES)
+- [Anmol Arora - Front End Designer, Developer and Team Lead](https://github.com/ANMOLCODES)
 - [Rishabh Pathak - Back End Developer](https://github.com/RishabhPathak1211)
 - [Anirban Roy Mukherjee - Hosting Expert](https://github.com/AnirbanRM)
 
