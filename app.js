@@ -40,7 +40,7 @@ app.use('/healthCheck', (req, res) => {
 
 app.use(session({
     store: MongoDBStore.create({
-        mongoUrl: dbUrl,
+        mongoUrl: dbUrl
     }),
     secret: process.env.SESSION_SECRET,
     resave: false,
