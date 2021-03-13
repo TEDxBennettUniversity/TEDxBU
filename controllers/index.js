@@ -40,12 +40,31 @@ const renderForm = (req, res) => {
 
 const registerUser = async (req, res) => {
     const detail = new Detail(req.body.details);
+    detail.orderID = 'orderid_' + new Date().getTime().toString().substr(5) + Math.floor(Math.random() * 1000)
     req.session.name = detail.name;
     req.session.email = detail.email;
     req.session.phone = detail.phone;
     const { tier } = req.query;
     detail.tier = validateTier(tier);
-    await detail.save();
+    const savedDetail = await detail.save();
+
+    req.session.orderid = savedDetail.orderID;
+
+    const mailOptions = {
+        from: process.env.CONTACT_MAIL_ID,
+        to: process.env.TEDX_MAIL_ID,
+        subject: `TedxBennett: Registration`,
+        html: `<p>Order ID: ${ savedDetail.orderID }</p>`
+    };
+
+    transporter.sendMail(mailOptions, (err, info) => {
+        if (err) {
+            console.log(err);
+        } else {
+            console.log('Email sent:' + info.response);
+        }
+    });
+
     res.redirect(`/payment?tier=${tier}`);
 }
 
@@ -69,7 +88,8 @@ const renderPayment = (req, res) => {
         cost,
         name: req.session.name,
         email: req.session.email,
-        phone: req.session.phone
+        phone: req.session.phone,
+        tier: heading.toLowerCase().replace(' ', '_')
     };
     res.render('payment', variables);
 }
@@ -120,4 +140,15 @@ const contactTeam = async (req, res) => {
     res.render('thankyou', { msg1: 'Glad that you reached out to us!', msg2: "We'll get back to you soon." });
 }
 
-module.exports = { renderIndex, renderTeam, renderForm, registerUser, renderPayment, userSubscribe, contactTeam };
+const renderThanks = (req, res) => {
+    res.render('thankyou', { msg1: 'Payment Successful.', msg2: "You'll get a mail regarding your order soon!" });
+}
+
+const renderSS = (req, res) => {
+    const { tier } = req.query;
+    const heading = validateTier(tier);
+    const orderid = req.session.orderid;
+    res.render('screenshot', { heading, orderid });
+}
+
+module.exports = { renderIndex, renderTeam, renderForm, registerUser, renderPayment, userSubscribe, contactTeam, renderThanks, renderSS };

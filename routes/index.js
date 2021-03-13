@@ -24,10 +24,16 @@ router.route('/register')
 router.route('/payment')
     .get(indexDetail.renderPayment);
 
-router.route('/order')
-    .get(paymentFuncs.getOrder);
+router.route('/confirmation')
+    .get(indexDetail.renderSS);
 
-router.route('/capture')
-    .post(paymentFuncs.capturePayment);
+router.route('/confirmed')
+    .get(indexDetail.renderThanks)
+
+// router.route('/order')
+//     .get(paymentFuncs.getOrder);
+
+// router.route('/capture')
+//     .post(paymentFuncs.capturePayment);
 
 module.exports = router;
