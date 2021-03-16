@@ -27,7 +27,7 @@ const detailSchema = Joi.object({
     details: Joi.object({
         name: Joi.string().required().escapeHTML(),
         email: Joi.string().email({ tlds: { allow: false } }).required().escapeHTML(),
-        phone: Joi.string().length(10).pattern(/^[0-9]+$/).required().escapeHTML(),
+        phone: Joi.string().required().escapeHTML(),
         institution: Joi.string().required().escapeHTML(),
         awareness: Joi.string().required().escapeHTML(),
     }).required()
@@ -42,7 +42,7 @@ const contactSchema = Joi.object({
         name: Joi.string().required().escapeHTML(),
         email: Joi.string().email({ tlds: { allow: false } }).required().escapeHTML(),
         subject: Joi.string().required().escapeHTML(),
-        number: Joi.string().pattern(/^[0-9]+$/).required().escapeHTML(),
+        number: Joi.string().required().escapeHTML(),
         message: Joi.string().required().escapeHTML()
     }).required()
 })
