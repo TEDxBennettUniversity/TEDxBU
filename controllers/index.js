@@ -11,7 +11,7 @@ const validateTier = (tier) => {
     }
     let heading = '';
     if (tier === 'basic_pass') heading = 'Basic Pass';
-    else if (tier === 'early_bird') heading = 'Early Bird';
+    else if (tier === 'discounted_pass') heading = 'Discounted Pass';
     // else if (tier === 'premium_pass') heading = 'Premium Pass';
     else {
         throw new ExpressError('Invalid Tier', 400);
@@ -75,7 +75,7 @@ const renderPayment = (req, res) => {
     switch (heading) {
         case 'Basic Pass': cost = 250 * 100;
             break;
-        case 'Early Bird': cost = 100 * 100;
+        case 'Discounted Pass': cost = 150 * 100;
             break;
         // case 'Premium Pass': cost = 200 * 100;
         //     break;

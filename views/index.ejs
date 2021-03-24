@@ -42,6 +42,9 @@
     <!-- scrollbar css -->
     <link rel="stylesheet" href="assets_main/css/scrollbar.css">
 
+    <!-- venobox -->
+    <link href="/assets_main/css/venobox/venobox.css" rel="stylesheet">
+
 
 </head>
 
@@ -142,14 +145,18 @@
                         <div data-countdown="2021/03/27"></div>
                         
                         <div class="header-content text-center">
-                            <h2 class="header-title"><span style="color: #f02805; font-weight: 900;">TED<sup>x</sup></span><span style="font-family: Helvetica; font-weight: lighter;">BennettUniversity</span></h2>
+                            <h2 class="header-title"><span style="color: #f02805; font-weight: 900;">TED<sup>x</sup></span><span style="font-family: Helvetica; font-weight: 100;">BennettUniversity</span></h2>
                             <h3 class="sub-title">27 March, 2021</h3>
-
+                            
                             <ul class="header-btn">
-                                <li><a class="main-btn main-btn-2" href="/register?tier=early_bird">Register Now</a></li>
-                                <li><a class="main-btn page-scroll" href="#about">Learn More</a></li>
+                                <a href="https://www.youtube.com/watch?v=ga-M0zI_QkU" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+
+                                <!-- <li><a class="main-btn main-btn-2" href="#">Register Now</a></li>
+                                <li><a class="main-btn page-scroll" href="#about">Learn More</a></li> -->
                             </ul>
+                            
                         </div>  <!-- header content -->
+                        
                     </div>
                 </div> <!-- row -->
             </div> <!-- container -->
@@ -730,11 +737,11 @@
                 <div class="col-lg-4 col-md-8 col-sm-9">
                     <div class="single-pricing active text-center mt-30 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0s">
                         <div class="pricing-name">
-                            <h4 class="pricing-title">Early Bird</h4>
+                            <h4 class="pricing-title">Discounted Pass</h4>
                             <span class="sub-title" style="color: #0a0a0a;">*Available for limited time only*</span>
                         </div>
                         <div class="pricing-price">
-                            <span>₹ 100.00</span>
+                            <span>₹ 150.00</span>
                             <!-- <p class="text">Per Day</p> -->
                         </div>
                         <div class="pricing-list">
@@ -747,7 +754,7 @@
                             </ul> -->
                         </div>
                         <div class="pricing-btn">
-                            <a class="main-btn main-btn-2" href="/register?tier=early_bird">Buy Ticket</a>
+                            <a class="main-btn main-btn-2" href="/register?tier=discounted_pass">Buy Ticket</a>
                         </div>
 
                         <div>
@@ -1082,6 +1089,14 @@
     <script src="assets_main/js/app.js"></script>
     <!--====== wow js ======-->
     <script src="assets_main/js/wow.min.js"></script>
+
+    <!-- venobox -->
+    <script src="/assets_main/css/venobox/venobox.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.venobox').venobox(); 
+        });
+    </script>
 
     <!--====== Main js ======-->
     <script src="assets_main/js/main.js"></script>

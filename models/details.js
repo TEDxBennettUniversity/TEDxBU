@@ -24,7 +24,7 @@ const DetailsSchema = new mongoose.Schema({
     tier: {
         type: String,
         required: true,
-        enum: ['Basic Pass', 'Early Bird', 'Premium Pass']
+        enum: ['Basic Pass', 'Early Bird', 'Discounted Pass']
     },
     orderID: {
         type: String,
