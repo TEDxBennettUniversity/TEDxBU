@@ -950,6 +950,13 @@ p {
   margin-top: 60px;
   /* text-transform: uppercase; */
 }
+
+.inactiveLink {
+  pointer-events: none;
+  color: black;
+  /* cursor: default; */
+}
+
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   .header-content .header-title {
     font-size: 60px;
@@ -982,7 +989,7 @@ p {
 }
 .header-content .header-btn li {
   display: inline-block;
-  margin: 10px 13px 0;
+  margin: 0px 13px 0;
 }
 
 /*===========================
