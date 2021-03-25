@@ -17,18 +17,18 @@ router.route('/contact')
 router.route('/team')
     .get(indexDetail.renderTeam);
 
-router.route('/register')
-    .get(indexDetail.renderForm)
-    .post(validation.validateDetails, catchAsync(indexDetail.registerUser));
+// router.route('/register')
+//     .get(indexDetail.renderForm)
+//     .post(validation.validateDetails, catchAsync(indexDetail.registerUser));
 
-router.route('/payment')
-    .get(indexDetail.renderPayment);
+// router.route('/payment')
+//     .get(indexDetail.renderPayment);
 
-router.route('/confirmation')
-    .get(indexDetail.renderSS);
+// router.route('/confirmation')
+//     .get(indexDetail.renderSS);
 
-router.route('/confirmed')
-    .get(indexDetail.renderThanks)
+// router.route('/confirmed')
+//     .get(indexDetail.renderThanks)
 
 // router.route('/order')
 //     .get(paymentFuncs.getOrder);
